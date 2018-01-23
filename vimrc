@@ -13,6 +13,7 @@ set tabstop=2
 set shiftwidth=2
 set noexpandtab
 let mapleader = ","   
+set number
 
 syntax enable
 set background=dark
@@ -56,6 +57,10 @@ Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'flowtype/vim-flow'
 Plugin 'ruanyl/vim-fixmyjs'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'dkprice/vim-easygrep'
+Plugin 'jpalardy/vim-slime'
+Plugin 'kshenoy/vim-signature'
+Plugin 'airblade/vim-gitgutter'
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -93,7 +98,7 @@ filetype plugin indent on    " required
 colorscheme slate
 
 " " YCM Python 3 support 
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 
 
 " map = to autoformat
@@ -133,6 +138,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " Airline powerline font "
 let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
 
 " Undo History Hotkey 
 nnoremap <C-u> :UndotreeToggle<cr>
@@ -152,3 +158,5 @@ let g:formatters_javascript = ['my_custom_javascript']
 let g:fixmyjs_use_local = 1
 nnoremap <leader><leader>f :Fixmyjs<CR>
 
+
+let g:slime_target = "tmux"
