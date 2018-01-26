@@ -33,7 +33,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'moll/vim-node'
 "Plugin 'wookiehangover/jshint.vim'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'marijnh/tern_for_vim'
@@ -53,7 +53,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-repeat'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
+"Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'flowtype/vim-flow'
 Plugin 'ruanyl/vim-fixmyjs'
 Plugin 'terryma/vim-multiple-cursors'
@@ -61,6 +61,8 @@ Plugin 'dkprice/vim-easygrep'
 Plugin 'jpalardy/vim-slime'
 Plugin 'kshenoy/vim-signature'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-sleuth'
+Plugin 'w0rp/ale'
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -105,18 +107,11 @@ let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 noremap <leader>f  :Autoformat<CR>
 let g:formatterpath = ['/usr/local/bin/']
 
-" " Syntastic Settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-"" End syntastic
-"""""""""""""""""
+let g:airline#extensions#ale#enabled = 1
+let g:ale_open_list = 1
+nmap <silent> <leader><leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <leader><leader>j <Plug>(ale_next_wrap)
+"
 " Tern settings
 " """""""""""""""""
  let g:tern_show_argument_hints='on_hold'
