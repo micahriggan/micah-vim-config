@@ -12,7 +12,7 @@ call vundle#begin()
 set tabstop=2
 set shiftwidth=2
 set noexpandtab
-let mapleader = ","   
+let mapleader = ","
 set number
 
 syntax enable
@@ -41,7 +41,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
-Plugin 'Shougo/vimproc.vim' 
+Plugin 'Shougo/vimproc.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/promptline.vim'
@@ -99,7 +99,7 @@ filetype plugin indent on    " required
 " " Set default color scheme
 colorscheme slate
 
-" " YCM Python 3 support 
+" " YCM Python 3 support
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 
 
@@ -111,20 +111,27 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_open_list = 1
 nmap <silent> <leader><leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <leader><leader>j <Plug>(ale_next_wrap)
+" Write this in your vimrc file
+let g:ale_lint_on_text_changed = 'never'
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
+
+
 "
 " Tern settings
 " """""""""""""""""
- let g:tern_show_argument_hints='on_hold'
+let g:tern_show_argument_hints='on_hold'
 " " and
- let g:tern_map_keys=1
+let g:tern_map_keys=1
 
 
-" CTRL P Ignore Node_Modules 
+" CTRL P Ignore Node_Modules
 let g:ctrlp_custom_ignore = '\v[\/]\.*(node_modules|bower_components)$'
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 
-" Easier Split navigation 
+" Easier Split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -135,7 +142,7 @@ nnoremap <C-H> <C-W><C-H>
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
 
-" Undo History Hotkey 
+" Undo History Hotkey
 nnoremap <C-u> :UndotreeToggle<cr>
 
 " Ultisnips bindings
