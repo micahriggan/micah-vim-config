@@ -1,5 +1,3 @@
-
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 " set term=cons25
@@ -15,7 +13,6 @@ set noexpandtab
 let mapleader = ","
 set number
 
-syntax enable
 set background=dark
 " " alternatively, pass a path where Vundle should install plugins
 " "call vundle#begin('~/some/path/here')
@@ -36,7 +33,7 @@ Plugin 'moll/vim-node'
 "Plugin 'scrooloose/syntastic'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'marijnh/tern_for_vim'
+"Plugin 'marijnh/tern_for_vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'leafgarland/typescript-vim'
@@ -83,6 +80,7 @@ Plugin 'L9'
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+syntax on
 " " To ignore plugin indent changes, instead use:
 " "filetype plugin on
 " "
@@ -116,6 +114,9 @@ let g:ale_lint_on_text_changed = 'never'
 " You can disable this option too
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
+let g:ale_fixers = {
+			\   'javascript': ['eslint'],
+			\}
 
 
 "
