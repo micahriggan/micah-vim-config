@@ -60,6 +60,8 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-sleuth'
 Plugin 'w0rp/ale'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'fatih/vim-go'
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -115,7 +117,12 @@ let g:ale_lint_on_text_changed = 'never'
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
 let g:ale_fixers = {
+			\   'javascript': ['eslint', 'prettier'],
+			\}
+
+let g:ale_linters = {
 			\   'javascript': ['eslint'],
+			\   'typescript': ['tsserver', 'tslint'],
 			\}
 
 
@@ -153,7 +160,7 @@ let g:UltiSnipsJumpBackwardTrigger="<leader>k"
 
 
 " vim-autoformat esformatter
-let g:formatdef_my_custom_javascript = '"esformatter"'
+let g:formatdef_my_custom_javascript = '"prettier"'
 let g:formatters_javascript = ['my_custom_javascript']
 
 
@@ -163,3 +170,8 @@ nnoremap <leader><leader>f :Fixmyjs<CR>
 
 
 let g:slime_target = "tmux"
+
+let g:tsuquyomi_disable_quickfix = 1
+
+" Searching 
+set incsearch
