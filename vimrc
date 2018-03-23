@@ -9,7 +9,7 @@ call vundle#begin()
 "
 set tabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab
 let mapleader = ","
 set number
 
@@ -58,10 +58,13 @@ Plugin 'dkprice/vim-easygrep'
 Plugin 'jpalardy/vim-slime'
 Plugin 'kshenoy/vim-signature'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-sleuth'
+"Plugin 'tpope/vim-sleuth'
 Plugin 'w0rp/ale'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
+Plugin 'tmhedberg/matchit'
+Plugin 'tomlion/vim-solidity'
+
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -162,6 +165,7 @@ let g:UltiSnipsJumpBackwardTrigger="<leader>k"
 " vim-autoformat esformatter
 let g:formatdef_my_custom_javascript = '"prettier"'
 let g:formatters_javascript = ['my_custom_javascript']
+let g:formatters_typescript = ['my_custom_javascript']
 
 
 " fixmyjs use local
@@ -175,3 +179,8 @@ let g:tsuquyomi_disable_quickfix = 1
 
 " Searching 
 set incsearch
+
+hi SpellBad ctermfg=215 guifg=#ffaf5f 
+hi SpellCap ctermfg=215 guifg=#ffaf5f 
+hi ErrorMsg ctermfg=215 guifg=#ffaf5f 
+hi vimError ctermfg=215 guifg=#ffaf5f 
