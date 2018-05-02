@@ -52,7 +52,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-repeat'
 "Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'flowtype/vim-flow'
-Plugin 'ruanyl/vim-fixmyjs'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'jpalardy/vim-slime'
@@ -64,6 +63,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'fatih/vim-go'
 Plugin 'tmhedberg/matchit'
 Plugin 'tomlion/vim-solidity'
+Plugin 'heavenshell/vim-jsdoc'
 
 
 " " The following are examples of different formats supported.
@@ -121,6 +121,8 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_fixers = {
 			\   'javascript': ['eslint', 'prettier'],
+			\   'typescript': ['tslint', 'prettier'],
+			\   'json': ['fixjson', 'prettier'],
 			\}
 
 let g:ale_linters = {
@@ -168,9 +170,7 @@ let g:formatters_javascript = ['my_custom_javascript']
 let g:formatters_typescript = ['my_custom_javascript']
 
 
-" fixmyjs use local
-let g:fixmyjs_use_local = 1
-nnoremap <leader><leader>f :Fixmyjs<CR>
+nnoremap <leader><leader>f :ALEFix<CR>
 
 
 let g:slime_target = "tmux"
