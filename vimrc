@@ -32,6 +32,8 @@ Plugin 'moll/vim-node'
 "Plugin 'wookiehangover/jshint.vim'
 "Plugin 'scrooloose/syntastic'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'othree/javascript-libraries-syntax.vim'
 "Plugin 'marijnh/tern_for_vim'
 Plugin 'Chiel92/vim-autoformat'
@@ -120,15 +122,16 @@ let g:ale_lint_on_text_changed = 'never'
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
 let g:ale_fixers = {
-			\   'javascript': ['eslint', 'prettier'],
-			\   'typescript': ['tslint', 'prettier'],
-			\   'json': ['fixjson', 'prettier'],
-			\}
+      \   'javascript': ['eslint', 'prettier-eslint'],
+      \   'jsx': ['eslint', 'prettier-eslint'],
+      \   'typescript': ['tslint', 'prettier'],
+      \   'json': ['fixjson', 'prettier'],
+      \}
 
 let g:ale_linters = {
-			\   'javascript': ['eslint'],
-			\   'typescript': ['tsserver', 'tslint'],
-			\}
+      \   'javascript': ['eslint'],
+      \   'typescript': ['tslint', 'tsuquyomi'],
+      \}
 
 
 "
@@ -171,16 +174,24 @@ let g:formatters_typescript = ['my_custom_javascript']
 
 
 nnoremap <leader><leader>f :ALEFix<CR>
+nnoremap <leader><leader>d :TsuDefinition<CR>
+nnoremap <leader><leader>i :TsuImport<CR>
+
+nnoremap <leader><leader>j :lnext<CR>
+nnoremap <leader><leader>k :lprev<CR>
 
 
-let g:slime_target = "tmux"
+" Write this in your vimrc file
+" " You can disable this option too
+" " if you don't want linters to run on opening a file
+" let g:ale_lint_on_enter = 0
 
-let g:tsuquyomi_disable_quickfix = 1
-
-" Searching 
+" Searching
 set incsearch
 
-hi SpellBad ctermfg=215 guifg=#ffaf5f 
-hi SpellCap ctermfg=215 guifg=#ffaf5f 
-hi ErrorMsg ctermfg=215 guifg=#ffaf5f 
-hi vimError ctermfg=215 guifg=#ffaf5f 
+hi SpellBad ctermfg=215 guifg=#ffaf5f
+hi SpellCap ctermfg=215 guifg=#ffaf5f
+hi ErrorMsg ctermfg=215 guifg=#ffaf5f
+hi vimError ctermfg=215 guifg=#ffaf5f
+
+let g:slime_target = "tmux"
