@@ -102,7 +102,7 @@ syntax on
 " " see :h vundle for more details or wiki for FAQ
 " " Put your non-Plugin stuff after this line
 " " Set default color scheme
-colorscheme slate
+colorscheme solarized
 
 " " YCM Python 3 support
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
