@@ -176,6 +176,7 @@ let g:formatters_typescript = ['my_custom_javascript']
 nnoremap <leader><leader>f :ALEFix<CR>
 nnoremap <leader><leader>d :TsuDefinition<CR>
 nnoremap <leader><leader>i :TsuImport<CR>
+nnoremap <leader><leader>r :TsuRenameSymbol<CR>
 
 nnoremap <leader><leader>j :lnext<CR>
 nnoremap <leader><leader>k :lprev<CR>
