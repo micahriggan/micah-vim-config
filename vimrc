@@ -67,6 +67,17 @@ Plugin 'tmhedberg/matchit'
 Plugin 'tomlion/vim-solidity'
 Plugin 'heavenshell/vim-jsdoc'
 
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'mattn/vim-lsp-settings'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+
+source /Users/micahriggan/dev/lsp-examples/vimrc.generated
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rbenv'
+Plugin 'tpope/vim-bundler'
+
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -105,7 +116,7 @@ syntax on
 colorscheme solarized
 
 " " YCM Python 3 support
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 
 
 " map = to autoformat
@@ -124,8 +135,11 @@ let g:ale_lint_on_enter = 0
 let g:ale_fixers = {
       \   'javascript': ['eslint', 'prettier-eslint'],
       \   'jsx': ['eslint', 'prettier-eslint'],
+      \   'tsx': ['eslint', 'prettier'],
+      \   'typescriptreact': ['prettier', 'eslint'],
       \   'typescript': ['tslint', 'prettier'],
       \   'json': ['fixjson', 'prettier'],
+      \   'ruby': ['rubocop'],
       \}
 
 let g:ale_linters = {
@@ -169,8 +183,13 @@ let g:UltiSnipsJumpBackwardTrigger="<leader>k"
 
 " vim-autoformat esformatter
 let g:formatdef_my_custom_javascript = '"prettier"'
+let g:formatdef_my_custom_ruby = '"rubocop"'
 let g:formatters_javascript = ['my_custom_javascript']
 let g:formatters_typescript = ['my_custom_javascript']
+let g:formatters_typescriptreact = ['my_custom_javascript']
+let g:formatters_ruby = ['my_custom_ruby']
+
+autocmd FileType typescriptreact let b:autoformat_autoindent=0
 
 
 nnoremap <leader><leader>f :ALEFix<CR>
@@ -196,3 +215,4 @@ hi ErrorMsg ctermfg=215 guifg=#ffaf5f
 hi vimError ctermfg=215 guifg=#ffaf5f
 
 let g:slime_target = "tmux"
+let g:ctrlp_max_files=0
