@@ -77,6 +77,8 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rbenv'
 Plugin 'tpope/vim-bundler'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 
 " " The following are examples of different formats supported.
@@ -158,7 +160,7 @@ let g:tern_map_keys=1
 
 " CTRL P Ignore Node_Modules
 let g:ctrlp_custom_ignore = '\v[\/]\.*(node_modules|bower_components)$'
-nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>t :FZF<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Easier Split navigation
