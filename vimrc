@@ -80,6 +80,8 @@ Plugin 'tpope/vim-bundler'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
+Plugin 'github/copilot.vim'
+
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -142,6 +144,7 @@ let g:ale_fixers = {
       \   'typescript': ['tslint', 'prettier'],
       \   'json': ['fixjson', 'prettier'],
       \   'ruby': ['rubocop'],
+      \   'python': ['black'],
       \}
 
 let g:ale_linters = {
@@ -177,6 +180,7 @@ let g:airline_theme='solarized'
 " Undo History Hotkey
 nnoremap <C-u> :UndotreeToggle<cr>
 
+
 " Ultisnips bindings
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<leader>j"
@@ -194,6 +198,7 @@ let g:formatters_ruby = ['my_custom_ruby']
 autocmd FileType typescriptreact let b:autoformat_autoindent=0
 
 
+nnoremap <leader><leader>n :NERDTreeFind<CR>
 nnoremap <leader><leader>f :ALEFix<CR>
 nnoremap <leader><leader>d :TsuDefinition<CR>
 nnoremap <leader><leader>i :TsuImport<CR>
@@ -218,3 +223,11 @@ hi vimError ctermfg=215 guifg=#ffaf5f
 
 let g:slime_target = "tmux"
 let g:ctrlp_max_files=0
+
+let g:copilot_node_command = "~/.nvm/versions/node/v16.15.0/bin/node"
+
+" disable LSP diagnostics
+let g:lsp_diagnostics_enabled = 0 
+
+" disable ale virtual text
+let g:ale_virtualtext_cursor=0
