@@ -72,7 +72,7 @@ Plugin 'mattn/vim-lsp-settings'
 Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 
-source /Users/micahriggan/dev/lsp-examples/vimrc.generated
+"source /Users/micahriggan/dev/lsp-examples/vimrc.generated
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rbenv'
@@ -120,7 +120,7 @@ syntax on
 colorscheme solarized
 
 " " YCM Python 3 support
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:ycm_server_python_interpreter = '/opt/homebrew/bin/python3'
 
 
 " map = to autoformat
