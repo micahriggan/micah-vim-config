@@ -224,7 +224,7 @@ hi vimError ctermfg=215 guifg=#ffaf5f
 let g:slime_target = "tmux"
 let g:ctrlp_max_files=0
 
-let g:copilot_node_command = "~/.nvm/versions/node/v16.15.0/bin/node"
+let g:copilot_node_command = "~/.nvm/versions/node/v18.15.0/bin/node"
 
 " disable LSP diagnostics
 let g:lsp_diagnostics_enabled = 0 
